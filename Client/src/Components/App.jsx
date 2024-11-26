@@ -56,14 +56,6 @@ function App() {
             path="/DiseaseDetectionPage"
             element={<DiseaseDetectionPage />}
           />
-          <Route
-            path="/AppointmentBookingPage"
-            element={<AppointmentBookingPage />}
-          />
-          <Route
-            path="/appointment-booking/:id"
-            element={<AppointmentBooking />}
-          />
 
           <Route
             path="/dentist/:dentistId/reviews"
@@ -91,6 +83,14 @@ function App() {
           <Route path="/About" element={<About />} />
 
           <Route element={<PatientRoute />}>
+            <Route
+              path="/AppointmentBookingPage"
+              element={<AppointmentBookingPage />}
+            />
+            <Route
+              path="/appointment-booking/:id"
+              element={<AppointmentBooking />}
+            />
             <Route path="/patient" element={<PMainLayout />}>
               <Route path="dashboard" element={<PatientDashboard />} />
               <Route path="Appointments" element={<PatientAppointments />} />
