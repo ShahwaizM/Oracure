@@ -15,21 +15,9 @@ import DentistModel from "../models/DentistModel.js";
 import HospitalModel from "../models/HospitalModel.js";
 import AppointmentModel from "../models/AppointmentModel.js";
 dotenv.config();
-// Multer config for file upload
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/"); // Save to the 'uploads' directory
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname); // Unique filename
-  },
-});
-
-export const upload = multer({ storage });
 
 export const dentistSignup = async (req, res) => {
   try {
-    // Destructure data from req.body
     const {
       name,
       email,
@@ -46,8 +34,8 @@ export const dentistSignup = async (req, res) => {
     } = req.body;
 
     // Check if a file is uploaded
-    const profile_img = req.file ? req.file.filename : null; // Get the uploaded image filename
-
+    const profile_img = req.file.path; // Cloudinary URL will be in req.file.path
+    console.log(profile_img);
     // Check if email already exists
     const existingDentist = await Dentist.findOne({ email });
     if (existingDentist) {
@@ -143,7 +131,7 @@ export const updateDoctorDetails = async (req, res) => {
   try {
     const { id } = req.params; // Get doctor ID from params
     const updatedData = req.body; // Get updated data from the request body
-    const profile_img = req.file ? req.file.filename : null; // Get the uploaded image filename
+    const profile_img = req.file.path; // Get the uploaded image filename
 
     // If profile_img is provided, include it in updatedData
     if (profile_img) {

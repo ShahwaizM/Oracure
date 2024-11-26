@@ -14,6 +14,7 @@ dotenv.config();
 
 //databse config
 connectDB();
+// Configure Cloudinary
 
 //rest object
 const app = express();
@@ -36,21 +37,16 @@ app.use(express.json());
 //routes
 app.use("/auth", authRoutes);
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
-
-const upload = multer({ storage: storage });
-app.use("/uploads", express.static("uploads"));
 //rest api
+app.post("/upload", async (req, res) => {
+  const imageFilePath = req.file.path;
+  try {
+    const imageUrl = await uploadImage(imageFilePath);
+    res.json({ success: true, imageUrl });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to OraCure App</h1>");
 });

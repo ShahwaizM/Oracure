@@ -75,8 +75,8 @@
 
 /* Button Styling */
 .btn-custom {
-  background-color:    #134f8b;
-
+  background-color: #134f8b;
+  color: white;
   border: 2px solid #fafafa; /* Neon border for consistency */
   padding: 12px 30px;
   border-radius: 50px;
@@ -95,15 +95,15 @@
 /* Make Cards Responsive for Smaller Screens */
 @media (max-width: 768px) {
   .service-card {
-      max-width: 100%; /* Cards will take full width on smaller screens */
+    max-width: 100%; /* Cards will take full width on smaller screens */
   }
 
   .Services-Section h2 {
-      font-size: 2.5rem; /* Smaller heading for mobile */
+    font-size: 2.5rem; /* Smaller heading for mobile */
   }
 
   .Services-Section p.lead {
-      font-size: 1.2rem; /* Adjust lead text size for mobile */
+    font-size: 1.2rem; /* Adjust lead text size for mobile */
   }
 }
 /* Card Hover Zoom Effect */

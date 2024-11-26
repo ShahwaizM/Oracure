@@ -1,7 +1,6 @@
 import express from "express";
 import {
   dentistSignup,
-  upload,
   getAllDentists,
   getAllPatients,
   login,
@@ -18,6 +17,8 @@ import {
   deletePatient,
   getStats,
 } from "../controllers/authControllers.js";
+import upload from "../config/multer.js"; // Import multer setup
+
 import formidable from "express-formidable";
 import {
   getDoctorAppointments,
@@ -42,6 +43,7 @@ import { getHospital } from "../controllers/HospitalController.js";
 const router = express.Router();
 
 // Signup Route
+
 router.post("/dsignup", upload.single("profile_img"), dentistSignup);
 router.post("/set-clinic-timing", verifyToken, settimings);
 

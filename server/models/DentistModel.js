@@ -42,7 +42,7 @@ const DentistSchema = new mongoose.Schema(
       required: true,
     },
     profile_img: {
-      type: String, // Store the image filename or path here
+      type: String,
     },
     role: {
       type: Number,

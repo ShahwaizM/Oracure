@@ -83,7 +83,7 @@ const AppointmentBookingCard = () => {
                   <Card className="appointment-card">
                     <Card.Img
                       variant="top"
-                      src={`${serverUrl}/uploads/${doctor.profile_img}`}
+                      src={`${doctor.profile_img}`}
                       alt={`${doctor.name} photo`}
                       className="doctor-image"
                     />

@@ -252,7 +252,7 @@ const DoctorSignUp = () => {
                   type="file"
                   className="form-control"
                   id="image"
-                  name="image"
+                  name="profile_img"
                   accept="image/*"
                   onChange={(e) => setprofile_img(e.target.files[0])}
                 />
