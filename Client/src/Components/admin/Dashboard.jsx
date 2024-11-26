@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row } from "antd";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
@@ -14,7 +15,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/auth/stats");
+        const response = await axios.get(serverUrl + "/auth/stats");
         setStats(response.data.data);
       } catch (error) {
         console.error("Error fetching stats:", error);

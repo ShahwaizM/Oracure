@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, Rate } from "antd"; // Import Ant Design components
 import "antd/dist/reset.css"; // Import Ant Design styles
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap styles
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const DentistReviews = () => {
   const navigate = useNavigate();
@@ -16,13 +17,13 @@ const DentistReviews = () => {
       try {
         // Fetch dentist details
         const dentistResponse = await axios.get(
-          `http://localhost:5000/auth/getDentist/${dentistId}`
+          `${serverUrl}/auth/getDentist/${dentistId}`
         );
         setDentist(dentistResponse.data);
 
         // Fetch reviews with patient names
         const reviewsResponse = await axios.get(
-          `http://localhost:5000/auth/dentist/${dentistId}/reviews`
+          `${serverUrl}/auth/dentist/${dentistId}/reviews`
         );
 
         console.log("Reviews response:", reviewsResponse.data.reviews); // Log the reviews response

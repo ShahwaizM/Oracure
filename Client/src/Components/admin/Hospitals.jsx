@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const Hospitals = () => {
   const [hospitals, setHospitals] = useState([]);
 
   useEffect(() => {
     const fetchHospitals = async () => {
-      const response = await axios.get("http://localhost:5000/auth/hospitals");
+      const response = await axios.get(serverUrl + "/auth/hospitals");
       setHospitals(response.data);
     };
     fetchHospitals();

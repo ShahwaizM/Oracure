@@ -4,6 +4,7 @@ import "../Styles/UserSignUp.css"; // Path to your CSS file
 import brandLogo from "../Images/logo4.png"; // Replace with the path to your logo
 import Header from "./Header";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -28,10 +29,7 @@ const UserSignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/auth/signup",
-        userData
-      );
+      const response = await axios.post(serverUrl + "/auth/signup", userData);
       console.log("User signed up:", response.data);
       toast.success("Signed Up Succesfully!");
       navigate("/login");

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -8,7 +9,7 @@ const Appointments = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/auth/ap");
+        const response = await axios.get(serverUrl + "/auth/ap");
         setAppointments(response.data);
       } catch (error) {
         console.error("Error fetching appointments:", error);

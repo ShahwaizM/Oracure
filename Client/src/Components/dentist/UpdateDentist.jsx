@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "bootstrap/dist/css/bootstrap.min.css";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const DentistUpdateForm = () => {
   const id = localStorage.getItem("id");
@@ -21,9 +22,7 @@ const DentistUpdateForm = () => {
   useEffect(() => {
     const fetchDentistDetails = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/auth/getDentist/${id}`
-        );
+        const response = await axios.get(`${serverUrl}/auth/getDentist/${id}`);
         setFormData(response.data);
       } catch (error) {
         console.error("Error fetching dentist details", error);
@@ -61,7 +60,7 @@ const DentistUpdateForm = () => {
 
     try {
       // Axios will automatically set the appropriate headers for FormData
-      await axios.put(`http://localhost:5000/auth/doctors/${id}`, formData);
+      await axios.put(`${serverUrl}/auth/doctors/${id}`, formData);
       toast.success("Dentist details updated successfully");
     } catch (error) {
       console.error("Error updating dentist details", error);

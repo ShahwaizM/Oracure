@@ -3,6 +3,7 @@ import { Checkbox, TimePicker, Button, message, Card } from "antd";
 import "antd/dist/reset.css"; // Ensure you import Ant Design styles
 import moment from "moment"; // For handling time formatting
 import { useNavigate } from "react-router-dom";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const SetAvailability = ({ dentistId }) => {
   const [days, setWorkingDays] = useState([]);
@@ -36,21 +37,18 @@ const SetAvailability = ({ dentistId }) => {
     }
 
     try {
-      const response = await fetch(
-        "http://localhost:5000/auth/setAvailability",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: token, // Ensure the token is prefixed with "Bearer "
-          },
-          body: JSON.stringify({
-            startTime: startTime.format("HH:mm"), // Format time as HH:mm
-            endTime: endTime.format("HH:mm"),
-            days,
-          }),
-        }
-      );
+      const response = await fetch(serverUrl + "/auth/setAvailability", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token, // Ensure the token is prefixed with "Bearer "
+        },
+        body: JSON.stringify({
+          startTime: startTime.format("HH:mm"), // Format time as HH:mm
+          endTime: endTime.format("HH:mm"),
+          days,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to save timings. Please try again.");

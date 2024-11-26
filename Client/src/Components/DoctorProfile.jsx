@@ -4,7 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Card, Rate, Button } from "antd"; // Import Ant Design components
 import "antd/dist/reset.css"; // Import Ant Design styles
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap styles
-import '../Styles/DoctorProfile.css'
+import "../Styles/DoctorProfile.css";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const DentistProfile = () => {
   const navigate = useNavigate();
@@ -16,12 +17,12 @@ const DentistProfile = () => {
     const fetchDentistDetails = async () => {
       try {
         const dentistResponse = await axios.get(
-          `http://localhost:5000/auth/getDentist/${dentistId}`
+          `${serverUrl}/auth/getDentist/${dentistId}`
         );
         setDentist(dentistResponse.data);
 
         const reviewsResponse = await axios.get(
-          `http://localhost:5000/auth/dentist/${dentistId}/reviews`
+          `${serverUrl}/auth/dentist/${dentistId}/reviews`
         );
         setReviews(reviewsResponse.data.reviews);
       } catch (error) {
@@ -41,7 +42,7 @@ const DentistProfile = () => {
         <div className="row">
           <div className="col-md-4 text-center">
             <img
-              src={`http://localhost:5000/uploads/${dentist.profile_img}`}
+              src={`${serverUrl}/uploads/${dentist.profile_img}`}
               alt={dentist.name}
               className="img-fluid DoctorImage rounded-circle mb-3"
               style={{ width: "150px", height: "150px" }}

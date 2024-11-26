@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { message, Form, Input, Button } from "antd";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const VerifyOTP = () => {
   const [email, setEmail] = useState(""); // Add email state
@@ -13,15 +14,12 @@ const VerifyOTP = () => {
     try {
       setLoading(true);
       const otpToken = localStorage.getItem("otpToken"); // Get the OTP token from localStorage
-      const response = await axios.post(
-        "http://localhost:5000/auth/verify-otp",
-        {
-          email, // Send the email for verification
-          otp,
-          otpToken,
-          newPassword,
-        }
-      );
+      const response = await axios.post(serverUrl + "/auth/verify-otp", {
+        email, // Send the email for verification
+        otp,
+        otpToken,
+        newPassword,
+      });
       message.success(response.data.message); // Password reset success message
       localStorage.removeItem("otpToken"); // Remove the OTP token from localStorage after success
     } catch (error) {

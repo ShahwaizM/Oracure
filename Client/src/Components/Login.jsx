@@ -6,6 +6,8 @@ import Header from "./Header";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 const Login = () => {
   const [loginData, setLoginData] = useState({
     email: "",
@@ -25,10 +27,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/auth/login",
-        loginData
-      );
+      const response = await axios.post(serverUrl + "/auth/login", loginData);
       const { token, role, id, redirect } = response.data;
 
       // Save the token to localStorage (or any other storage you're using)

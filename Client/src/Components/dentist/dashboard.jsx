@@ -6,6 +6,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { CheckCircleOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import "antd/dist/reset.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const { Title, Paragraph } = Typography;
 
@@ -22,7 +23,7 @@ const DentistDashboard = () => {
     const fetchDentistDetails = async () => {
       try {
         const dentistResponse = await axios.get(
-          `http://localhost:5000/auth/getDentist/${dentistId}`
+          `${serverUrl}/auth/getDentist/${dentistId}`
         );
         setDentist(dentistResponse.data);
       } catch (error) {
@@ -33,7 +34,7 @@ const DentistDashboard = () => {
     const fetchAppointmentStats = async () => {
       try {
         const statsResponse = await axios.get(
-          `http://localhost:5000/auth/appointmentStats/${dentistId}`
+          `${serverUrl}/auth/appointmentStats/${dentistId}`
         );
         setAppointmentStats(statsResponse.data);
       } catch (error) {
@@ -85,7 +86,7 @@ const DentistDashboard = () => {
       <Col md={8}>
         <div className="text-center">
           <img
-            src={`http://localhost:5000/uploads/${dentist.profile_img}`}
+            src={`${serverUrl}/uploads/${dentist.profile_img}`}
             alt={dentist.name}
             className="img-fluid rounded-circle mb-3 shadow"
             style={{

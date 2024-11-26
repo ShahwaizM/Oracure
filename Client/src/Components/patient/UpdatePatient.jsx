@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap styles are imported
 import toast from "react-hot-toast";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 const PatientUpdateForm = () => {
   const id = localStorage.getItem("id");
   const patientId = id;
@@ -17,7 +19,7 @@ const PatientUpdateForm = () => {
     const fetchPatientDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/auth/getPatients/${patientId}`
+          `${serverUrl}/auth/getPatients/${patientId}`
         );
         setFormData(response.data);
       } catch (error) {
@@ -40,10 +42,7 @@ const PatientUpdateForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(
-        `http://localhost:5000/auth/patients/${patientId}`,
-        formData
-      );
+      await axios.put(`${serverUrl}/auth/patients/${patientId}`, formData);
       toast.success("Patient details updated successfully");
     } catch (error) {
       console.error("Error updating patient details", error);

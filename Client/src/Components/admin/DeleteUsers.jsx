@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Button, Modal, message } from "antd";
 import axios from "axios";
 import MainLayout from "./MainLayout"; // Assuming this is the layout with sidebar
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const DeleteUsers = () => {
   const [patients, setPatients] = useState([]);
@@ -16,12 +17,8 @@ const DeleteUsers = () => {
     const fetchUsers = async () => {
       setLoading(true);
       try {
-        const patientResponse = await axios.get(
-          "http://localhost:5000/auth/patients"
-        );
-        const dentistResponse = await axios.get(
-          "http://localhost:5000/auth/dentists"
-        );
+        const patientResponse = await axios.get(serverUrl + "/auth/patients");
+        const dentistResponse = await axios.get(serverUrl + "/auth/dentists");
 
         setPatients(patientResponse.data);
         setDentists(dentistResponse.data);
@@ -47,8 +44,8 @@ const DeleteUsers = () => {
     const id = selectedUser._id;
     const deleteUrl =
       userType === "patient"
-        ? `http://localhost:5000/auth/deletePatient/${id}`
-        : `http://localhost:5000/auth/deleteDentist/${id}`;
+        ? `${serverUrl}/auth/deletePatient/${id}`
+        : `${serverUrl}/auth/deleteDentist/${id}`;
 
     try {
       await axios.delete(deleteUrl);

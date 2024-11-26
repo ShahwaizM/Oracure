@@ -4,6 +4,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Rate, Button } from "antd"; // Ant Design components
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap 5
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const AddReview = () => {
   const { appointmentId } = useParams(); // Get appointment ID from the URL
@@ -20,7 +21,7 @@ const AddReview = () => {
     const fetchAppointmentDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/auth/getAPdetails/${appointmentId}`
+          `${serverUrl}/auth/getAPdetails/${appointmentId}`
         );
         setdata(response.data.dentistId.name);
       } catch (error) {
@@ -36,7 +37,7 @@ const AddReview = () => {
     try {
       // API call to submit the review
       await axios.post(
-        `http://localhost:5000/auth/appointment/${appointmentId}/review`,
+        `${serverUrl}/auth/appointment/${appointmentId}/review`,
         {
           stars,
           title,

@@ -1,7 +1,9 @@
 // Fetch all dentists
+const serverUrl = import.meta.env.VITE_SERVER_URL;
+
 export const fetchDentists = async () => {
   try {
-    const response = await fetch("http://localhost:5000/auth/dentists");
+    const response = await fetch(serverUrl + "/auth/dentists");
     const dentists = await response.json();
     return dentists;
   } catch (error) {
@@ -12,7 +14,7 @@ export const fetchDentists = async () => {
 // Fetch all patients
 export const fetchPatients = async () => {
   try {
-    const response = await fetch("http://localhost:5000/auth/patients");
+    const response = await fetch(serverUrl + "/auth/patients");
     const patients = await response.json();
     return patients;
   } catch (error) {
@@ -22,7 +24,7 @@ export const fetchPatients = async () => {
 // getusers.js
 export const fetchsingleDentist = async (id) => {
   try {
-    const response = await fetch(`http://localhost:5000/auth/getDentist/${id}`);
+    const response = await fetch(`${serverUrl}/auth/getDentist/${id}`);
     const fetchedDentist = await response.json(); // Await the response properly
     console.log("Response data: ", fetchedDentist);
     return fetchedDentist;
@@ -37,7 +39,7 @@ export const bookAppointmentAPI = async (
   token
 ) => {
   const response = await fetch(
-    `http://localhost:5000/auth/appointmentbooking/${doctorId}`,
+    `${serverUrl}/auth/appointmentbooking/${doctorId}`,
     {
       method: "POST",
       headers: {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Styles/About.css"; // Import your CSS file for styling
 import img from "../Images/About.png";
 import axios from "axios";
+
 const About = () => {
   const [stats, setStats] = useState({
     totalDoctors: 0,
@@ -13,7 +14,8 @@ const About = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/auth/stats");
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await axios.get(serverUrl + "/auth/stats");
         setStats(response.data.data);
       } catch (error) {
         console.error("Error fetching stats:", error);

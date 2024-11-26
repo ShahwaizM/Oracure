@@ -3,6 +3,7 @@ import { Card, Button, Row, Col, Form } from "react-bootstrap";
 import { fetchDentists } from "../helper/getusers.js"; // Importing fetchDentists function
 import "../Styles/AppointmentBookingCard.css"; // Import custom styles
 import { Link, useNavigate } from "react-router-dom";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const AppointmentBookingCard = () => {
   const [doctors, setDoctors] = useState([]);
@@ -82,7 +83,7 @@ const AppointmentBookingCard = () => {
                   <Card className="appointment-card">
                     <Card.Img
                       variant="top"
-                      src={`http://localhost:5000/uploads/${doctor.profile_img}`}
+                      src={`${serverUrl}/uploads/${doctor.profile_img}`}
                       alt={`${doctor.name} photo`}
                       className="doctor-image"
                     />

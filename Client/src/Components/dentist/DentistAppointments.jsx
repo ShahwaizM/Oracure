@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Table, Typography, message, Spin, Button } from "antd";
 import "antd/dist/reset.css"; // Ensure Ant Design styles are imported
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const { Title } = Typography;
 
@@ -16,7 +17,7 @@ const DoctorAppointments = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/auth/markComplete",
+        serverUrl + "/auth/markComplete",
         { appointmentId },
         {
           headers: {
@@ -42,7 +43,7 @@ const DoctorAppointments = () => {
         const token = localStorage.getItem("token"); // Adjust as needed
 
         const response = await axios.get(
-          "http://localhost:5000/auth/doctor-appointments",
+          serverUrl + "/auth/doctor-appointments",
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send the token in the Authorization header

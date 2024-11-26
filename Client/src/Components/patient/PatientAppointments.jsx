@@ -3,6 +3,7 @@ import axios from "axios";
 import { Table, Typography, message, Spin, Button } from "antd";
 import "antd/dist/reset.css"; // Ensure Ant Design styles are imported
 import { Link } from "react-router-dom";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const { Title } = Typography;
 
@@ -16,7 +17,7 @@ const PatientAppointments = () => {
   const cancelAppointment = async (appointmentId) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/auth/cancelAppointment",
+        serverUrl + "/auth/cancelAppointment",
         { appointmentId },
         {
           headers: {
@@ -37,7 +38,7 @@ const PatientAppointments = () => {
     const fetchAppointments = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/auth/patient-appointments",
+          serverUrl + "/auth/patient-appointments",
           {
             headers: {
               Authorization: `Bearer ${token}`,

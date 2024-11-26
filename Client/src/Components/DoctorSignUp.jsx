@@ -6,6 +6,7 @@ import Header from "./Header";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const DoctorSignUp = () => {
   const navigate = useNavigate();
@@ -50,10 +51,7 @@ const DoctorSignUp = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/auth/dsignup",
-        formData
-      );
+      const response = await axios.post(serverUrl + "/auth/dsignup", formData);
       toast.success("Signed Up Succesfully!");
 
       console.log("Dentist signed up:", response.data);

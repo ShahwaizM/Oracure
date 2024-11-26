@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { message, Form, Input, Button } from "antd";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -11,10 +12,9 @@ const ForgotPassword = () => {
   const handleForgotPassword = async () => {
     try {
       setLoading(true);
-      const response = await axios.post(
-        "http://localhost:5000/auth/forgot-password",
-        { email }
-      );
+      const response = await axios.post(serverUrl + "/auth/forgot-password", {
+        email,
+      });
       message.success(response.data.message); // OTP sent message
       localStorage.setItem("otpToken", response.data.otpToken); // Store the OTP token in local storage for later use
       navigate("/verify-otp");

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import axios from "axios";
 import Spinner from "./Spinner"; // Your spinner component
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 
 const PatientRoute = () => {
   const [isPatient, setIsPatient] = useState(null);
@@ -17,14 +18,11 @@ const PatientRoute = () => {
       }
 
       try {
-        const response = await axios.get(
-          "http://localhost:5000/auth/patient-auth",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.get(serverUrl + "/auth/patient-auth", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         if (response.data.ok) {
           setIsPatient(true);

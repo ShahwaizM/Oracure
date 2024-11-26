@@ -3,9 +3,11 @@ import axios from "axios";
 import { Card, Col, Row, Typography, Spin, message } from "antd";
 import "antd/dist/reset.css"; // Ensure Ant Design styles are imported
 import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap styles are imported
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const { Title, Text } = Typography;
-
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 const PatientDashboard = () => {
   const id = localStorage.getItem("id"); // Patient ID from localStorage
   const [patientData, setPatientData] = useState(null);
@@ -16,9 +18,7 @@ const PatientDashboard = () => {
   useEffect(() => {
     const fetchPatientDetails = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/auth/getPatients/${id}`
-        );
+        const response = await axios.get(`${serverUrl}/auth/getPatients/${id}`);
         setPatientData(response.data);
       } catch (error) {
         console.error("Error fetching patient details", error);
@@ -63,6 +63,7 @@ const PatientDashboard = () => {
           <p>{patientData.gender}</p>
         </div>
       </Card>
+      <Button href="/AppointmentBookingPage">Book Appointment</Button>{" "}
     </div>
   );
 };
