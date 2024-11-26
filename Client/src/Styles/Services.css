@@ -1,0 +1,113 @@
+/* Global Section Styling */
+.Services-Section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Enhanced "Our Services" Heading */
+.Services-Section h2 {
+  font-size: 3rem; /* Larger font size for the heading */
+  font-weight: bold;
+  color: #024950; /* Teal color for consistency */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Gives it a bold look */
+}
+
+/* Description Text Styling */
+.Services-Section p.lead {
+  font-size: 1.3rem; /* Slightly larger font size */
+  font-weight: 400;
+  color: #0a0a0a;
+  max-width: 800px; /* Restricting the text width for better readability */
+  margin: 0 auto 40px; /* Center the text and add spacing */
+  line-height: 1.8;
+  letter-spacing: 0.5px; /* Slightly spaced letters */
+}
+
+/* Card Styling with Larger Size and Neon Border */
+.service-card {
+  box-shadow: 0 4px 15px rgba(8, 8, 8, 0.37); /* Shadow for depth */
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffffff, #e6e9f0);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth transitions */
+  width: 100%;
+  max-width: 350px; /* Increase card size */
+  margin: 0 auto; /* Center the cards */
+  margin-bottom: 40px; /* Space between cards */
+}
+
+/* Constant Neon Glow around the Border */
+
+/* Image Container and Styling */
+.card-img-container {
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
+}
+
+.service-card-img {
+  height: 250px; /* Larger image height */
+  object-fit: cover;
+  width: 100%; /* Ensure full width */
+}
+
+/* Card Title and Text Styling */
+.service-card h5 {
+  color: #024950;
+  font-weight: bold;
+  font-size: 1.5rem; /* Larger font size */
+  margin-top: 20px; /* Added space between the image and heading */
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 1.1rem; /* Increase paragraph size */
+  line-height: 1.5;
+  padding: 0 15px; /* Padding to prevent text overflow */
+}
+
+/* Button Styling */
+.btn-custom {
+  background-color:    #134f8b;
+
+  border: 2px solid #fafafa; /* Neon border for consistency */
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Add spacing above button */
+}
+
+/* Button Hover Effect */
+.btn-custom:hover {
+  background-color: #741714;
+  color: #ffffff;
+}
+
+/* Make Cards Responsive for Smaller Screens */
+@media (max-width: 768px) {
+  .service-card {
+      max-width: 100%; /* Cards will take full width on smaller screens */
+  }
+
+  .Services-Section h2 {
+      font-size: 2.5rem; /* Smaller heading for mobile */
+  }
+
+  .Services-Section p.lead {
+      font-size: 1.2rem; /* Adjust lead text size for mobile */
+  }
+}
+/* Card Hover Zoom Effect */
+.service-card:hover {
+  transform: scale(1.05); /* Slight zoom-in effect */
+  transition: transform 0.2s ease; /* Smooth transition */
+}

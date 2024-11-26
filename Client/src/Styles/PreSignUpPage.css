@@ -1,0 +1,43 @@
+.sign-up-options-container {
+    background-color: #fafafa;
+}
+
+.sign-up-card {
+    background-color: #beb7b7c5; /* White background for cards */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 12px;
+}
+.sign-up-card:hover{
+    background-color: #ffffff; /* White background for cards */
+
+}
+.sign-up-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card-description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-sign-up {
+    width: 30%;
+    background:  linear-gradient(
+        45deg,
+        #0062cc,
+        #003366
+      );   
+       border-radius: 30px; /* Rounded button */
+}
+.btn-sign-up:hover{
+    background-color: #3a0707;
+}
+

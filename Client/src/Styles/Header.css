@@ -1,0 +1,109 @@
+/* Navbar styling remains the same */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  background-color: rgb(255, 255, 255);
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Brand logo remains the same */
+.brand-logo {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+}
+
+/* Brand name remains the same */
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(
+    45deg,
+    #024950,
+    #253d3d
+  ); /* Gradient for a modern look */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Navbar links remain the same */
+.navbar-nav .nav-link {
+  margin-right: 15px;
+  font-weight: 500;
+  color: #0a0a0a;
+  padding: 10px 18px !important;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #741919;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Rounded hover effect for links remains the same */
+.rounded-hover {
+  border-radius: 25px;
+  padding: 8px 16px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rounded-hover:hover {
+  background: linear-gradient(
+    45deg,
+    #0062cc,
+    #003366
+  ); /* Gradient for a modern look */
+  color: white;
+  text-decoration: none;
+}
+
+/* Improved Buttons for login and signup */
+.btn-group .btn {
+  border-radius: 75px; /* Full rounded buttons */
+  padding: 10px 30px; /* Larger padding for a sleek look */
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(
+    45deg,
+    #0062cc,
+    #003366
+  ); /* Gradient for a modern look */
+  border: 2px solid rgb(247, 246, 246);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.btn-group .btn:hover {
+  background: linear-gradient(
+    45deg,
+    #976363,
+    #801515
+  ); /* Gradient for a modern look */
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Ensure no outline on click for better user experience */
+.btn-group .btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(2, 12, 24, 0.5);
+}
+
+/* Hover effects for login/signup buttons */
+.btn-hover {
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.btn-hover:hover {
+  background-color: #292b73; /* Deep purple on hover */
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for hover */
+}

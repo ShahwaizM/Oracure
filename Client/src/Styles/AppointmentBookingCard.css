@@ -1,0 +1,86 @@
+/* Appointment Card */
+.appointment-card {
+  border-radius: 12px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover transition */
+  padding: 20px; /* Add padding */
+  height: 420px; /* Shortened height */
+  width: 100%; /* Full width */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure content doesn’t overflow */
+ 
+}
+
+.appointment-card:hover {
+  transform: translateY(-7px); /* Lift on hover */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  border-color: #003a77; /* Darker blue on hover */
+}
+
+.doctor-image {
+  border-radius: 8px; /* Rounded image corners */
+  height: 180px; /* Reduced height */
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between image and content */
+}
+
+.doctor-name {
+  font-size: 1.1rem; /* Slightly smaller font */
+  font-weight: 600; /* Bold font */
+  color: #333; /* Darker text */
+  text-align: center; /* Centered text */
+  margin-bottom: 8px; /* Spacing below the name */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long names */
+}
+
+.doctor-city,
+.doctor-education {
+  font-size: 0.95rem; /* Standard text size for details */
+  color: #666; /* Lighter text color */
+  text-align: center; /* Center align text */
+  margin-bottom: 5px; /* Spacing between fields */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+.book-appointment-btn {
+  background: linear-gradient(135deg, #0062cc, #00d2ff); /* Modern gradient background */
+  border: none; /* No border */
+  font-weight: 600; /* Bold font */
+  font-size: 1rem; /* Standard button font size */
+  color: white; /* White text */
+  border-radius: 25px; /* Rounded button */
+  padding: 10px 20px; /* Button padding */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+  margin-top: auto; /* Push the button to the bottom */
+  box-shadow: 0 4px 12px rgba(0, 98, 204, 0.25); /* Soft shadow for button */
+}
+
+.book-appointment-btn:hover {
+  background: linear-gradient(135deg, #004a99, #0098e6); /* Darker gradient on hover */
+  transform: translateY(-3px); /* Lift on hover */
+  box-shadow: 0 6px 18px rgba(0, 98, 204, 0.35); /* Stronger shadow on hover */
+}
+
+.sub-nav {
+  background-color: #b8d2e7; /* Light background for better contrast */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.sub-nav .form-control {
+  border: 1px solid #007bff; /* Add border to input */
+  border-radius: 8px; /* Rounded input field */
+  padding: 10px;
+}
+
+.sub-nav .form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Focus effect on input */
+}

@@ -1,0 +1,91 @@
+.login-container {
+    background-color: #fdfdfd;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 12px;
+    height: 80lvh;
+
+}
+
+.login-card {
+    height: 100lvh;
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 80%;
+    max-width: 400px; /* Increased width for a larger card */
+    width: 95%; /* Responsive width */
+    padding: 0 2rem 2rem; /* No padding at the top, padding on sides and bottom */
+    margin: 0 auto; /* Center align the card */
+}
+
+.login-card h3 {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem; /* Reduced margin for a shorter card */
+}
+
+.login-card .brand-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.login-card .form-label {
+    color: #1b1717;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem; /* Slightly smaller font size for labels */
+}
+
+.login-card .form-control {
+    border-radius: 8px; /* Reduced border-radius for a more compact look */
+    padding: 0.5rem; /* Reduced padding to make the input smaller */
+    font-size: 0.875rem; /* Smaller font size for inputs */
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid #ced4da;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.login-card .btn-primary {
+    background-color: rgb(43, 47, 104);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.login-card .btn-primary:hover {
+    background-color: rgb(33, 37, 93);
+    transform: translateY(-2px);
+}
+
+.login-card .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.login-card .forgot-password-link {
+    color: #007bff;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.login-card .forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 0 1rem 1rem; /* No padding at the top, adjusted padding for smaller screens */
+    }
+}

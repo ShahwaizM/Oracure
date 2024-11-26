@@ -1,0 +1,85 @@
+.dentist-profile-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background-color: #fff; /* Clean white background */
+    padding: 20px;
+    width: 100%;
+    max-width: 100%; /* Ensure responsiveness */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+  }
+  
+  .dentist-profile-card:hover {
+    transform: translateY(-3px); /* Lift on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  }
+  
+  .dentist-profile-card h2 {
+    font-size: 1.4rem; /* Smaller but readable size */
+    font-weight: 600;
+    color: #0d0d0e; /* Blue for prominence */
+  }
+  
+  .dentist-profile-card p {
+    font-size: 1rem;
+    color: #666; /* Light gray for secondary details */
+    margin-bottom: 10px;
+  }
+  .ReviewCard{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 12px;
+  }
+.ReviewSubCard{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+
+}
+  .DoctorImage {
+    border-radius: 50%; /* Circle image */
+    border: 3px solid #050505; /* Blue border */
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px;
+  }
+  
+  .book-appointment-btn {
+    background: linear-gradient(135deg, #007bff, #00d2ff); /* Gradient button */
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    border-radius: 50px; /* Rounded button */
+    padding: 10px 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .book-appointment-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #00a3ff); /* Darken gradient */
+    transform: translateY(-2px); /* Slight lift */
+  }
+  
+  .card {
+    border: none; /* Clean look */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+  

@@ -1,0 +1,77 @@
+.doctor-signup-container {
+    background-color: #fcfcfc;
+    padding: 2rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+
+}
+
+.doctor-signup-card {
+    background-color: #ffffff;
+    max-width: 700px; /* Reduced max-width to fit within screen size */
+    width: 90%; /* Adjust width to be responsive */
+    padding: 2rem;
+    margin: 0 auto; /* Center align the card */
+}
+
+.doctor-signup-card h3 {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.doctor-signup-card .brand-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.doctor-signup-card .form-label {
+    color: #1b1717;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.doctor-signup-card .form-control {
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid #ced4da;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-signup-card .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.doctor-signup-card .btn-primary {
+    background-color: rgb(43, 47, 104);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.doctor-signup-card .btn-primary:hover {
+    background-color: rgb(33, 37, 93);
+    transform: translateY(-2px);
+}
+
+.doctor-signup-card .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .doctor-signup-card {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 1.5rem;
+    }
+}

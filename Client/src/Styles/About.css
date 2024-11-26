@@ -1,0 +1,52 @@
+/* AboutUs.css */
+.about-heading {
+  font-size: 3rem; /* Larger font size for the heading */
+  font-weight: bold; 
+  text-transform: uppercase; /* Make it more attractive */
+  color: #1a1a1a; /* Darker color for the heading */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  animation: pulse 2s infinite; /* Continuous animation */
+}
+
+.about-description,
+.about-text {
+  color: #333; /* Dark color for better readability */
+  font-size: 1.25rem; /* Adjusted font size for better style */
+}
+
+.about-wrapper {
+  background-color: #ddd9d9; /* Optional background for contrast */
+  padding: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 12px;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #007bff; /* Adjust your primary button color */
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Continuous animation for heading */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

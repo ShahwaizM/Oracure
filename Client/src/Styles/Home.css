@@ -1,0 +1,177 @@
+/* Hero Section with Gradient Background */
+.hero-section {
+  background-color: #0b6b6e;
+  padding: 60px 15px;
+  display: flex;
+  flex-direction: column; /* Stack on small screens */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* Center the content */
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Ensure content is above the background */
+}
+
+/* Brand Name Styling with Hollow Effect */
+.hero-heading {
+  font-size: 4rem;
+  font-weight: 700; /* Keeps the thickness */
+  color: white; /* Set a solid color */
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  animation: fadeInSlideUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Typing Effect for Tagline without Blinking Cursor */
+.hero-tagline {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f3f6f8;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; /* Start with no width for typing effect */
+  animation: typing 3.5s steps(40, end) forwards; /* No cursor animation */
+}
+
+/* Typing Animation (No Blinking Cursor) */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Description */
+.hero-description {
+  font-size: 1.2rem;
+  color: #fcf9f9;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Button Styling: Equal Size, Square with Shadows */
+.hero-buttons {
+  display: flex;
+  gap: 20px; /* Increased gap for better spacing */
+  justify-content: center;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-outline-primary {
+  width: 160px; /* Increased button width */
+  height: 50px; /* Adjusted height for a sleeker look */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px; /* More rounded corners */
+  transition: all 0.3s ease; /* Slightly faster transition */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: inline-flex; /* Use flexbox for center alignment */
+  align-items: center;
+  justify-content: center;
+  animation: fadeInSlideUp 1.6s ease forwards;
+  opacity: 0;
+}
+
+/* Primary Button with Hover Effects */
+.hero-buttons .btn-primary {
+  background-color:  linear-gradient(
+    45deg,
+    #0062cc,
+    #003366
+  );
+  border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #5e190d;
+  transform: scale(1.1); /* Increased scale effect */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Outline Button with Hover Effects */
+.hero-buttons .btn-outline-primary {
+  background-color: transparent;
+  border: 2px solid #faf9f8;
+  color: #f8f8fc;
+}
+
+.hero-buttons .btn-outline-primary:hover {
+  background-color: #5e190d;
+  color: white;
+  transform: scale(1.1); /* Increased scale effect */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation for text sliding up */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image Styling */
+.hero-image {
+  max-width: 75%;
+  height: auto; /* Ensure it scales properly */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .hero-heading {
+    font-size: 3.5rem; /* Adjust font size */
+  }
+
+  .hero-tagline {
+    font-size: 1.4rem; /* Adjust font size */
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline-primary {
+    width: 140px; /* Adjust button width */
+    height: 50px; /* Adjust button height */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem; /* Smaller font size */
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem; /* Smaller font size */
+    white-space: normal; /* Allow text wrapping */
+    width: auto; /* Allow full width for tagline */
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline-primary {
+    width: 100%; /* Full width on mobile */
+    height: 50px; /* Consistent height */
+  }
+
+  .hero-image {
+    height: auto; /* Adjust image height */
+    width: 80%;
+  }
+}

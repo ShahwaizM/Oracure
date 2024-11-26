@@ -1,0 +1,16 @@
+Link {
+  text-decoration: none !important;
+}
+a {
+  text-decoration: none !important;
+}
+/* .ant-table-cell {
+  background-color: rgb(86, 219, 86);
+  border: 1px solid white;
+}
+th {
+  background-color: rgb(243, 134, 61) !important;
+} */
+span {
+  padding: 5px 5px;
+}

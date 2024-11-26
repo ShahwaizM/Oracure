@@ -1,0 +1,60 @@
+.footer-section {
+  background: rgb(43, 47, 104); /* Gradient background */
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-section h5 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.footer-section p,
+.footer-section li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-section .social-icon {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-section .social-icon:hover {
+  transform: scale(1.2);
+  color: #00acee; /* Twitter blue */
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-section a:hover {
+  color: #00acee;
+}
+
+.footer-section .text-center p {
+  font-size: 0.8rem;
+  margin-top: 20px;
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+}

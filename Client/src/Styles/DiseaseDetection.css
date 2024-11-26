@@ -1,0 +1,46 @@
+/* DiseaseDetection.css */
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea; /* Light background for the image container */
+  border: 2px dashed #063261; /* Dashed border */
+  border-radius: 15px; /* Rounded corners */
+  height: 180px; /* Height of the image container */
+  position: relative;
+}
+
+.card {
+  border: none; /* Remove default card border */
+  border-radius: 60px; /* Rounded corners for the card */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+.btn-primary {
+  border-radius: 20px; /* Rounded buttons */
+  padding: 10px 20px; /* Button padding */
+  background-color: #063261;
+}
+
+.result-box,
+.remedies-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 150px; /* Set a fixed height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for boxes */
+  overflow-y: auto; /* Enable scrolling if content exceeds */
+}
+
+.result-box h5,
+.remedies-box h5 {
+  margin-bottom: 10px;
+  color: #183e66; /* Blue color for headings */
+}
+
+.result-text,
+.remedies-text {
+  font-size: 0.9rem; /* Font size for text */
+  color: #333; /* Text color */
+}
