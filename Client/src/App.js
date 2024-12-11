@@ -26,7 +26,7 @@ import Hospitals from "./Components/admin/Hospitals";
 import Users from "./Components/admin/Users";
 import Appointments from "./Components/admin/Appointment";
 import DeleteUsers from "./Components/admin/DeleteUsers";
-import "../App.css";
+import "./App.css";
 import AdminRoute from "./Routes/adminRoute";
 import PMainLayout from "./Components/patient/MainLayout";
 import DMainLayout from "./Components/dentist/MainLayout";
