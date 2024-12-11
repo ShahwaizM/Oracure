@@ -42,7 +42,7 @@ const DentistProfile = () => {
         <div className="row">
           <div className="col-md-4 text-center">
             <img
-              src={`${serverUrl}/uploads/${dentist.profile_img}`}
+              src={`${dentist.profile_img}`}
               alt={dentist.name}
               className="img-fluid DoctorImage rounded-circle mb-3"
               style={{ width: "150px", height: "150px" }}
