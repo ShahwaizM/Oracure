@@ -24,6 +24,7 @@ app.use(
     origin: "https://oracure.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, 
   })
 );
 
