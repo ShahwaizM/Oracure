@@ -86,7 +86,7 @@ const DentistDashboard = () => {
       <Col md={8}>
         <div className="text-center">
           <img
-            src={`${serverUrl}/uploads/${dentist.profile_img}`}
+            src={`${dentist.profile_img}`}
             alt={dentist.name}
             className="img-fluid rounded-circle mb-3 shadow"
             style={{
