@@ -5,7 +5,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover transition */
   padding: 20px; /* Add padding */
-  height: 420px; /* Shortened height */
+  height: 460px; /* Shortened height */
   width: 100%; /* Full width */
   display: flex;
   flex-direction: column; 
