@@ -8,11 +8,14 @@
   height: 420px; /* Shortened height */
   width: 100%; /* Full width */
   display: flex;
-  flex-direction: column;
-  overflow: hidden; /* Ensure content doesn’t overflow */
- 
+  flex-direction: column; 
 }
-
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 .appointment-card:hover {
   transform: translateY(-7px); /* Lift on hover */
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
@@ -32,9 +35,7 @@
   color: #333; /* Darker text */
   text-align: center; /* Centered text */
   margin-bottom: 8px; /* Spacing below the name */
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for long names */
+
 }
 
 .doctor-city,
