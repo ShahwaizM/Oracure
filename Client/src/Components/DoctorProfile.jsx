@@ -58,7 +58,7 @@ const DentistProfile = () => {
               <strong>Education:</strong> {dentist.education}
             </p>
             <p>
-              <strong>Fees:</strong> ${dentist.fee}
+              <strong>Fees:</strong> PKR {dentist.fee}
             </p>
             <Button
               variant="primary"
