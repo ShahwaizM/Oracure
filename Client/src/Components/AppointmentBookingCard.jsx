@@ -98,7 +98,7 @@ const AppointmentBookingCard = () => {
                       <Card.Text className="doctor-education">
                         Specialization: {doctor.specialization} <br />
                         Education: {doctor.education} <br />
-                        Fees: {doctor.fee} <br />
+                        Fees: PKR {doctor.fee} <br />
                       </Card.Text>
                       <Button
                         variant="primary"
